@@ -19,8 +19,8 @@ const randomIntegerFromInterval = (min, max) => {
 
 function onStartBtn() {
 
-  // если изменение темы запущено, то просто return из функции
-  // если изменение темы не запущено, то запускаем - ставим буль и setInterval
+  // если изменение цвета запущено, то выполниться return из функции
+  // если изменение цвета не запущено, то запускаем - ставим буль и setInterval
   
   if (isActive) {
     console.log('изменение темы запущено, кнопка старт не активна');
@@ -30,6 +30,7 @@ function onStartBtn() {
   isActive = true;
 
   intervalId = setInterval(() => {
+
     // рандомная смена цвета из интернета
 
     document.body.style.backgroundColor =
@@ -37,7 +38,7 @@ function onStartBtn() {
 
     console.log('изменяю цвет фона');
 
-  }, 1000); //будет видно, что кнопка старт повторно не нажимается, когда изменение темы запущено
+  }, 1000); //кнопка старт повторно не нажимается, когда изменение цвета уже запущено
 }
 StartBtnRef.addEventListener('click', onStartBtn);
 
