@@ -20,14 +20,15 @@ button {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   background-color: rgb(247, 245, 245);
+  cursor: pointer;
 }
 
 .btn:disabled {
   background-color: rgb(179, 175, 175);
 }
 
-.start_btn:hover,
-.start_btn:focus {
+.start_btn:hover:not(:disabled),
+.start_btn:focus:not(:disabled) {
   color: #fff;
   background-color: #09741b;
   cursor: pointer;

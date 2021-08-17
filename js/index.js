@@ -18,7 +18,7 @@ const randomIntegerFromInterval = (min, max) => {
 };
 
 function onStartBtn() {
-
+  
   // если изменение цвета запущено, то выполниться return из функции
   // если изменение цвета не запущено, то запускаем - ставим буль и setInterval
   
@@ -39,11 +39,18 @@ function onStartBtn() {
     console.log('изменяю цвет фона');
 
   }, 1000); //кнопка старт повторно не нажимается, когда изменение цвета уже запущено
+
+  StartBtnRef.disabled = true;
 }
+
 StartBtnRef.addEventListener('click', onStartBtn);
 
 function onStopBtn() {
+  
   clearInterval(intervalId, console.log('останавливаю изменения цвета фона'));
   isActive = false;
+
+  StartBtnRef.disabled = false;
 }
+
 StopBtnRef.addEventListener('click', onStopBtn);
